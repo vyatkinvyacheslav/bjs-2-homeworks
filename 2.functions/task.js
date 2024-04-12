@@ -144,7 +144,7 @@ console.log(averageEvenElementsWorker(15, 97, 85, 64, 67, 10, 69, 40, 15, 35)); 
         countEvenElement++;
       }
     }
-    return (sumEvenElement / countEvenElement).toFixed(0);
+    return +((sumEvenElement / countEvenElement).toFixed(0));
   }
   
   function makeWork(arrOfArr, func) {
