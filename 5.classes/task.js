@@ -36,7 +36,7 @@ class PrintEditionItem {
   console.log(sherlock.state); //100
   
   class Magazine extends PrintEditionItem {
-    constructor(name, releaseDate, pagesCount, author) {
+    constructor(author, name, releaseDate, pagesCount) {
       super(name, releaseDate, pagesCount);
       this.author = author;
       this.type = "magazine";
@@ -44,7 +44,7 @@ class PrintEditionItem {
   }
   
   class Book extends PrintEditionItem {
-    constructor(name, releaseDate, pagesCount, author) {
+    constructor(author, name, releaseDate, pagesCount) {
       super(name, releaseDate, pagesCount);
       this.author = author;
       this.type = "book";
@@ -52,31 +52,32 @@ class PrintEditionItem {
   }
   
   class NovelBook extends Book {
-    constructor(name, releaseDate, pagesCount, author) {
+    constructor(author, name, releaseDate, pagesCount) {
       super(name, releaseDate, pagesCount, author);
       this.type = "novel";
     }
   }
   
   class FantasticBook extends Book {
-    constructor(name, releaseDate, pagesCount, author) {
+    constructor(author, name, releaseDate, pagesCount) {
       super(name, releaseDate, pagesCount, author);
       this.type = "fantastic";
     }
   }
   
   class DetectiveBook extends Book {
-    constructor(name, releaseDate, pagesCount, author) {
+    constructor(author, name, releaseDate, pagesCount) {
       super(name, releaseDate, pagesCount, author);
       this.type = "detective";
     }
   }
   
   const picknick = new FantasticBook(
+    "Аркадий и Борис Стругацкие",
     "Пикник на обочине",
     1972,
     168,
-    "Аркадий и Борис Стругацкие",
+   
   );
   
   console.log(picknick.author); //"Аркадий и Борис Стругацкие"
@@ -130,7 +131,7 @@ class PrintEditionItem {
      168
    )
   );
-  library.addBook(new NovelBook("Машина времени", "Герберт Уэллс", 1895, 138));
+  library.addBook(new NovelBook("Герберт Уэллс", "Машина времени", 1895, 138));
   library.addBook(new Magazine("Мурзилка", 1924, 60));
   
   console.log(library.findBookBy("name", "Властелин колец")); //null
