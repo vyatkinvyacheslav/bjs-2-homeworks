@@ -53,21 +53,21 @@ class PrintEditionItem {
   
   class NovelBook extends Book {
     constructor(author, name, releaseDate, pagesCount) {
-      super(name, releaseDate, pagesCount, author);
+      super(author, name, releaseDate, pagesCount);
       this.type = "novel";
     }
   }
   
   class FantasticBook extends Book {
     constructor(author, name, releaseDate, pagesCount) {
-      super(name, releaseDate, pagesCount, author);
+      super(author, name, releaseDate, pagesCount);
       this.type = "fantastic";
     }
   }
   
   class DetectiveBook extends Book {
     constructor(author, name, releaseDate, pagesCount) {
-      super(name, releaseDate, pagesCount, author);
+      super(author, name, releaseDate, pagesCount);
       this.type = "detective";
     }
   }
@@ -132,7 +132,7 @@ class PrintEditionItem {
    )
   );
   library.addBook(new NovelBook("Герберт Уэллс", "Машина времени", 1895, 138));
-  library.addBook(new Magazine("Мурзилка", 1924, 60));
+  library.addBook(new Magazine("", "Мурзилка", 1924, 60));
   
   console.log(library.findBookBy("name", "Властелин колец")); //null
   console.log(library.findBookBy("releaseDate", 1924).name); //"Мурзилка"
